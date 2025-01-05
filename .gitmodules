@@ -1,0 +1,3 @@
+[submodule "mcpixelate"]
+	path = mcpixelate
+	url = https://github.com/sam-olson/mcpixelate
