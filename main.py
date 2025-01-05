@@ -3,9 +3,7 @@ import websockets
 from time import sleep
 import screentominecraft
 
-screentominecraft.getScreenToCSV(True)
-
-'''async def connect_and_auth():
+async def connect_and_auth():
 
     async with websockets.connect("ws://127.0.0.1:31375") as websocket:
         # look at me putting things in variables for code readablity
@@ -23,4 +21,4 @@ screentominecraft.getScreenToCSV(True)
         sleep(10)
         await websocket.send("mode code")
 
-asyncio.run(connect_and_auth())'''
+asyncio.run(connect_and_auth())
