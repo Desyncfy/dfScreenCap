@@ -25,7 +25,7 @@ async def connect_and_auth():
 
         # Logic Attempt 2
         while 1:
-            sleep(1)
+            #sleep(1)
             utils.getScreenToCSV()
             
             latest = utils.readCSV("latest.csv")
