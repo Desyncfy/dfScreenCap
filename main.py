@@ -32,11 +32,7 @@ async def connect_and_auth():
             
             send = 'setinv [{Slot:-106b,count:1,id:"minecraft:iron_nugget",components:{"minecraft:custom_data":{PublicBukkitValues:{',latest,'}}}}]'
             "".join(latest)
-            print(send)
             await websocket.send(send)
-            #print(await websocket.recv())
-            await websocket.send("inv")
-            print(await websocket.recv())
 
         # The logic attempt 1
         '''while 1:
