@@ -23,16 +23,19 @@ def readCSV(filename):
             count += 1
             if count == 1:
                 continue
-            line.split(",")
             countnested = 0
             outputnested = []
-            for item in line:
+            for item in line.split(","):
+                item = item.strip("\n,")
                 countnested += 1
                 if countnested == 1: # X
-                    outputnested.append(f'"hypercube:x": {float(item)}d')
+                    outputnested.append(f'"hypercube:x{count}": {item}.0d')
+                    print(f'x: {item}')
                 elif countnested == 2: # Y
-                    outputnested.append(f'"hypercube:y": {float(item)}d')
+                    print(f'y: {item}')
+                    outputnested.append(f'"hypercube:y{count}": {item}.0d')
                 elif countnested == 3: # Block
-                    outputnested.append(f'"hypercube:block": "{item}"')
-            output.append(outputnested.join(","))
-        return output
+                    outputnested.append(f'"hypercube:block{count}": "{item}"')
+                    print(f'block: {item}, line: {line}')
+            output.append(",".join(outputnested))
+        return ",".join(output)

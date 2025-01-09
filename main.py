@@ -31,6 +31,7 @@ async def connect_and_auth():
             latest = utils.readCSV("latest.csv")
             
             send = 'setinv [{Slot:-106b,count:1,id:"minecraft:iron_nugget",components:{"minecraft:custom_data":{PublicBukkitValues:{',latest,'}}}}]'
+            "".join(latest)
             print(send)
             await websocket.send(send)
             #print(await websocket.recv())
