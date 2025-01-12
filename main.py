@@ -33,6 +33,7 @@ async def connect_and_auth():
             send = 'setinv [{Slot:-106b,count:1,id:"minecraft:iron_nugget",components:{"minecraft:custom_data":{PublicBukkitValues:{',latest,'}}}}]'
             "".join(latest)
             await websocket.send(send)
+            sleep(4) # DiamondFire is taking way too long to process my bullcrap so give it some time
 
         # The logic attempt 1
         '''while 1:

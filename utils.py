@@ -24,15 +24,22 @@ def readCSV(filename):
             if count == 1:
                 continue
             countnested = 0
-            outputnested = []
+            outputnested = ""
             for item in line.split(","):
                 item = item.strip("\n,")
                 countnested += 1
+                '''
                 if countnested == 1: # X
                     outputnested.append(f'"hypercube:x{count-1}": {item}.0d')
                 elif countnested == 2: # Y
                     outputnested.append(f'"hypercube:y{count-1}": {item}.0d')
                 elif countnested == 3: # Block
-                    outputnested.append(f'"hypercube:block{count-1}": "{item}"')
-            output.append(",".join(outputnested))
+                    outputnested.append(f'"hypercube:block{count-1}": "{item}"')'''
+                if countnested == 1: # X
+                    outputnested += f'"hypercube:data{count-1}": "{item},'
+                elif countnested == 2: # Y
+                    outputnested += f'{item},'
+                elif countnested == 3: # Block
+                    outputnested += f'{item}"'
+            output.append(outputnested)
         return ",".join(output)
