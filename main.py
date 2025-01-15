@@ -25,24 +25,14 @@ async def connect_and_auth():
 
         # Logic Attempt 2
         while 1:
-            #sleep(1)
             utils.getScreenToCSV()
             
             latest = utils.readCSV("latest.csv")
             
-            send = 'setinv [{Slot:-106b,count:1,id:"minecraft:iron_nugget",components:{"minecraft:custom_data":{PublicBukkitValues:{',latest,'}}}}]'
+            send = 'setinv [{Slot:1b,count:1,id:"minecraft:iron_nugget",components:{"minecraft:custom_data":{PublicBukkitValues:{',latest,'}}}}]'
             "".join(latest)
             await websocket.send(send)
-            sleep(4) # DiamondFire is taking way too long to process my bullcrap so give it some time
-
-        # The logic attempt 1
-        '''while 1:
-            screentominecraft.getScreenToCSV()
-            sleep(1)
-            latest = open("latest.csv").read().replace("\n","|")
-            send = f"setinv [{{Count:1b,Slot:-106b,id:\"minecraft:iron_nugget\",tag:{{data:\"{latest}\"}}]"
-            await websocket.send(send)
-            print(f"OUT {send}")'''
+            #sleep(2) # DiamondFire is taking way too long to process my bullcrap so give it some time
 
 
 asyncio.run(connect_and_auth())

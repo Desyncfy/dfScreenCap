@@ -8,7 +8,7 @@ def getScreenToCSV(saveImage=False):
     latest = ImageGrab.grab()
     os.remove("latest.png")
     latest.save("latest.png")
-    image = PixelImage("latest.png", 50, 50, 50)
+    image = PixelImage("latest.png", 50, 51, 50)
     if saveImage == True:
         image.save_image("frame.png")
     os.remove("latest.csv")
@@ -28,13 +28,6 @@ def readCSV(filename):
             for item in line.split(","):
                 item = item.strip("\n,")
                 countnested += 1
-                '''
-                if countnested == 1: # X
-                    outputnested.append(f'"hypercube:x{count-1}": {item}.0d')
-                elif countnested == 2: # Y
-                    outputnested.append(f'"hypercube:y{count-1}": {item}.0d')
-                elif countnested == 3: # Block
-                    outputnested.append(f'"hypercube:block{count-1}": "{item}"')'''
                 if countnested == 1: # X
                     outputnested += f'"hypercube:data{count-1}": "{item},'
                 elif countnested == 2: # Y
