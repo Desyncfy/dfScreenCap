@@ -5,11 +5,29 @@ This project seems kind of insane but we have the technology
 I do not recommend using this, as it's a bit of a mess, but:
 
 ## Tutorial
-1. **Installing** <br> Clone this project and its submodules, requirements.txt has most of the libraries, but you'll probably need to install a few more. If you're on NixOS, use the shell.nix and requirements.txt good luck there.
-2. **Running** <br> install [CodeClient](https://github.com/DFOnline/CodeClient), enable ccapi. run the code. type /auth in your game and with any luck a countdown will appear and at the end it won't crash. Great. Now write some dfcode to interpret it or take mine:
+> [!WARNING]
+> Intended only for people who actually know what they're doing (don't show up and ask me how to install git or something)
+
+1. **Installing**
+
+Clone this project and its submodules with
+```bash
+git clone --recursive https://github.com/Desyncfy/dfScreenCap.git
+```
+Next install the libraries with requirements.txt.
+```bash
+pip install -r requirements.txt
+```
+It has most of the libraries, but you'll probably need to install a few more. If you're on NixOS, use the shell.nix and requirements.txt in a virtual environment. (good luck)
+
+2. **Running**
+
+Install [CodeClient](https://github.com/DFOnline/CodeClient), enable ccapi. run the code. type /auth in your game and with any luck a countdown will appear and at the end it won't crash. Great. Now write some dfcode to interpret it or take mine:
 
 
 ## DFCODE
+> [!IMPORTANT]
+> This code's a little outdated you might want to edit it a bit to get a more desirable result
 ```dfcode
 1. {components:{"minecraft:custom_data":{PublicBukkitValues:{"hypercube:codetemplatedata":'{"author":"Chickenmanfy","name":"&e&lEvent &6» &ePlayer Join Game Event","version":1,"code":"H4sIAAAAAAAA/7VSTWsCMRD9KyVnTz30kJuUllIoLXgUWWIyboOzyZKMisj+9042i3Vbox7aUzJfb94b3kEs0et1FHJ+ENYImWMxGV4pYAuOOFah5i5uImhS+6LjnCbrHTe9eutENylA2FXVotpDOAOTf30mj1akau4zilTK+nZY8b5zPUAqS/EBobExptIJjRcVR4XfBDpmHdGTkPcP3UjCePZbS1B6DekAxgbQPMiUIIHTvgWOnA9NWXpeWw1brlzxMYAiu4U3b+AiA40+wq0UAONltH/TMzXJO5vwx4KucbjZUk9OLRGOnpoi+t3dM9r6k05dNQPqS8fKeSJla/0AKArTCrFabZwuHDYLEAY033NG7Ba+0qL7At64dKXEAwAA"}'}},"minecraft:custom_name":'{"extra":[{"bold":true,"color":"yellow","italic":false,"obfuscated":false,"strikethrough":false,"text":"Event ","underlined":false},{"bold":false,"color":"gold","italic":false,"text":"» "},{"color":"yellow","italic":false,"text":"Player Join Game Event"}],"text":""}'},count:1,id:"minecraft:ender_chest"}
 
