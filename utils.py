@@ -8,7 +8,7 @@ def getScreenToCSV(saveImage=False):
     latest = ImageGrab.grab()
     os.remove("latest.png")
     latest.save("latest.png")
-    image = PixelImage("latest.png", 50, 51, 50)
+    image = PixelImage("latest.png", 84, 100, 100)
     if saveImage == True:
         image.save_image("frame.png")
     os.remove("latest.csv")
